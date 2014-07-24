@@ -16,11 +16,11 @@ $ npm install chain-middleware
 
 ``` js
 var chain = require('chain-middleware');
-chain(function(req, res, next) {
+app.use(chain(function(req, res, next) {
   // Middleware 1
   next();
 }, function(req, res, next) {
   // Middleware 2
   next();
-});
+}));
 ```
