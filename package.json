@@ -1,0 +1,33 @@
+{
+  "name": "chain-middleware",
+  "version": "1.0.0",
+  "description": "Chains multiple Express middlewares together.",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "node_modules/.bin/jshint index.js test/",
+    "test": "node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplyianm/chain-middleware"
+  },
+  "keywords": [
+    "chain",
+    "express",
+    "middleware",
+    "composite",
+    "util"
+  ],
+  "author": "Ian Macalinao <me@ian.pw>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simplyianm/chain-middleware/issues"
+  },
+  "dependencies": {
+    "async": "^0.9.0"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "~1.17.0"
+  }
+}
