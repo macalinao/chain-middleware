@@ -1,6 +1,6 @@
 {
   "name": "chain-middleware",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chains multiple Express middlewares together.",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "chai": "~1.9.1",
+    "jshint": "^2.5.2",
     "mocha": "~1.17.0"
   }
 }
