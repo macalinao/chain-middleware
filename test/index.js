@@ -29,7 +29,7 @@ describe('chain-middleware', function() {
     }).to.throw(/must be a function/);
   });
 
-  it('should properly a terminating middleware chain', function() {
+  it('should properly run a terminating middleware chain', function() {
     chain(function(req, res, next) {
       req.asdf = true;
       res.jkl = false;
@@ -42,5 +42,19 @@ describe('chain-middleware', function() {
     })({}, {}, function() {
       throw new Error('Should not be called');
     });
+  });
+
+  it('should properly run a completing middleware chain', function(done) {
+    chain(function(req, res, next) {
+      req.asdf = true;
+      res.jkl = false;
+      next();
+    }, function(req, res, next) {
+      expect(req.asdf).to.be.true;
+      expect(res.jkl).to.be.false;
+      next();
+    }, function(req, res, next) {
+      next();
+    })({}, {}, done);
   });
 });
